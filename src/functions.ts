@@ -12,16 +12,9 @@ export function fahrenheitToCelius(temperature: number): number {
  * if the number is greater than zero.
  */
 export function add3(first: number, second: number, third: number): number {
+    const addPass = (num: number): number => (num > 0 ? num : 0);
     let total = 0;
-    if (first > 0) {
-        total += first;
-    }
-    if (second > 0) {
-        total += second;
-    }
-    if (third > 0) {
-        total += third;
-    }
+    total += addPass(first) + addPass(second) + addPass(third);
     return total;
 }
 

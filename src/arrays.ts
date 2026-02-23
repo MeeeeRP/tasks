@@ -1,3 +1,5 @@
+import { sortAndDeduplicateDiagnostics } from "typescript";
+
 /**
  * Consume an array of numbers, and return a new array containing
  * JUST the first and last number. If there are no elements, return
@@ -92,9 +94,9 @@ export function allRGB(colors: string[]): boolean {
  * And the array [] would become "0=0".
  */
 export function makeMath(addends: number[]): string {
-    let equation = [...addends].join("+");
+    let equation: string = [...addends].join("+");
     equation = equation === "" ? "0" : equation;
-    const sum = addends.reduce((acc, val) => acc + val, 0);
+    const sum = addends.reduce((acc: number, val: number) => acc + val, 0);
     return `${sum}=${equation}`;
 }
 
@@ -108,5 +110,20 @@ export function makeMath(addends: number[]): string {
  * And the array [1, 9, 7] would become [1, 9, 7, 17]
  */
 export function injectPositive(values: number[]): number[] {
-    return [];
+    const firstNegative: number =
+        [...values].find((num: number): boolean => num < 0) || 0;
+    if (firstNegative === 0) {
+        const newValues: number[] = [
+            ...values,
+            [...values].reduce((acc: number, val: number) => acc + val, 0),
+        ];
+        return newValues;
+    }
+    const firstNegativeIndex: number = values.indexOf(firstNegative);
+    const sumBeforeNegative = [...values]
+        .slice(0, firstNegativeIndex)
+        .reduce((acc: number, val: number) => acc + val, 0);
+    const newValues: number[] = [...values];
+    newValues.splice(firstNegativeIndex + 1, 0, sumBeforeNegative);
+    return newValues;
 }

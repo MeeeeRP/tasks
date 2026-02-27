@@ -1,5 +1,16 @@
 import { Question, QuestionType } from "./interfaces/question";
 
+// Question {
+//     id: number;
+//     name: string;
+//     body: string;
+//     type: QuestionType;
+//     options: string[];
+//     expected: string;
+//     points: number;
+//     published: boolean;
+// }
+
 /**
  * Create a new blank question with the given `id`, `name`, and `type. The `body` and
  * `expected` should be empty strings, the `options` should be an empty list, the `points`
@@ -8,9 +19,19 @@ import { Question, QuestionType } from "./interfaces/question";
 export function makeBlankQuestion(
     id: number,
     name: string,
-    type: QuestionType
+    type: QuestionType,
 ): Question {
-    return {};
+    const newQuestion: Question = {
+        id,
+        name,
+        type,
+        body: "",
+        expected: "",
+        options: [],
+        points: 1,
+        published: false,
+    };
+    return newQuestion;
 }
 
 /**
@@ -21,7 +42,9 @@ export function makeBlankQuestion(
  * HINT: Look up the `trim` and `toLowerCase` functions.
  */
 export function isCorrect(question: Question, answer: string): boolean {
-    return false;
+    return (
+        question.expected.trim().toLowerCase() === answer.trim().toLowerCase()
+    );
 }
 
 /**
@@ -115,7 +138,7 @@ export function mergeQuestion(
     id: number,
     name: string,
     contentQuestion: Question,
-    { points }: { points: number }
+    { points }: { points: number },
 ): Question {
     return contentQuestion;
 }

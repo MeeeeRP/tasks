@@ -1,16 +1,5 @@
 import { Question, QuestionType } from "./interfaces/question";
 
-// Question {
-//     id: number;
-//     name: string;
-//     body: string;
-//     type: QuestionType;
-//     options: string[];
-//     expected: string;
-//     points: number;
-//     published: boolean;
-// }
-
 /**
  * Create a new blank question with the given `id`, `name`, and `type. The `body` and
  * `expected` should be empty strings, the `options` should be an empty list, the `points`

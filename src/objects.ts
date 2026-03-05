@@ -54,9 +54,10 @@ export function isCorrect(question: Question, answer: string): boolean {
  * be exactly one of the options.
  */
 export function isValid(question: Question, answer: string): boolean {
-    return false;
+    return question.type === "multiple_choice_question" ?
+            question.options.includes(answer)
+        :   true;
 }
-
 /**
  * Consumes a question and produces a string representation combining the
  * `id` and first 10 characters of the `name`. The two strings should be

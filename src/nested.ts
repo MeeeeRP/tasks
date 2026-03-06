@@ -36,7 +36,13 @@ export function findQuestion(
     questions: Question[],
     id: number,
 ): Question | null {
-    return null;
+    return (
+        [...questions].find((question: Question) => question.id === id) ?? null
+    );
+    // I was trying to find a better way of returning this so I could avoid searching for the question again.
+    // I googled this operator (??) and it seemed the most elegant
+    // Please let me know if that is not how you wanted me to solve this problem.
+    // Alternate idea: filter for the one question, if not empty return it, otherwise null.
 }
 
 /**

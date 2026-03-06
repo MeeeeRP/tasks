@@ -1,3 +1,5 @@
+import testQuestionData from "./data/questions.json";
+import backupQuestionData from "./data/questions.json";
 import { Question } from "./interfaces/question";
 import {
     getPublishedQuestions,
@@ -17,8 +19,6 @@ import {
     editOption,
     duplicateQuestionInArray,
 } from "./nested";
-import testQuestionData from "./data/questions.json";
-import backupQuestionData from "./data/questions.json";
 
 const {
     BLANK_QUESTIONS,

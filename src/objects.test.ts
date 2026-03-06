@@ -1,3 +1,5 @@
+import testQuestionData from "./data/questions.json";
+import backupQuestionData from "./data/questions.json";
 import { Question } from "./interfaces/question";
 import {
     makeBlankQuestion,
@@ -11,8 +13,6 @@ import {
     addOption,
     mergeQuestion,
 } from "./objects";
-import testQuestionData from "./data/questions.json";
-import backupQuestionData from "./data/questions.json";
 
 ////////////////////////////////////////////
 // Setting up the test data

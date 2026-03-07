@@ -199,7 +199,19 @@ export function changeQuestionTypeById(
     targetId: number,
     newQuestionType: QuestionType,
 ): Question[] {
-    return [];
+    const newQuestionHandle = (
+        question: Question,
+        newQuestionType: QuestionType,
+    ): Question => {
+        if (newQuestionType === "short_answer_question")
+            return { ...question, type: newQuestionType, options: [] };
+        else return { ...question };
+    };
+    return [...questions].map((question: Question) =>
+        question === findQuestion(questions, targetId) ?
+            newQuestionHandle(question, newQuestionType)
+        :   question,
+    );
 }
 
 /**

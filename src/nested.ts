@@ -230,7 +230,19 @@ export function editOption(
     targetOptionIndex: number,
     newOption: string,
 ): Question[] {
-    return [];
+    const modifyOptions = (question: Question): string[] => {
+        const newOptions = [...question.options];
+        targetOptionIndex === -1 ?
+            newOptions.push(newOption)
+        :   newOptions.splice(targetOptionIndex, 1, newOption);
+        return newOptions;
+    };
+    const foundQuestion = (question: Question): Question => {
+        return question === findQuestion(questions, targetId) ?
+                { ...question, options: modifyOptions(question) }
+            :   question;
+    };
+    return [...questions].map((question: Question) => foundQuestion(question));
 }
 
 /***

@@ -12,5 +12,42 @@ export function d6(): number {
 }
 
 export function TwoDice(): React.JSX.Element {
-    return <div>Two Dice</div>;
+    const [die1, setDie1] = useState<number>(5); //would do d6() but they might randomly start the same
+    const [die2, setDie2] = useState<number>(2);
+
+    return (
+        <div>
+            <span
+                style={{ border: "1px solid black", margin: "5px" }}
+                data-testid="left-die"
+            >
+                {die1}
+            </span>
+            <span style={{ border: "1px solid black" }} data-testid="right-die">
+                {die2}
+            </span>
+
+            <Button
+                onClick={() => {
+                    setDie1(d6());
+                }}
+            >
+                Roll Left
+            </Button>
+            <Button
+                onClick={() => {
+                    setDie2(d6());
+                }}
+            >
+                Roll Right
+            </Button>
+            <p>
+                {die1 === die2 ?
+                    die1 === 1 ?
+                        "Snake Eyes! You Lose :("
+                    :   "It's a pair... congratulations you Win!"
+                :   ""}
+            </p>
+        </div>
+    );
 }

@@ -6,39 +6,33 @@ export function StartAttempt(): React.JSX.Element {
     const [started, setStarted] = useState<boolean>(false);
 
     return (
-        console.log(started, !started, attempts, attempts > 0),
-        (
-            <div>
-                The number of attempts left is {attempts}
-                {!started && attempts > 0 && (
-                    <Button
-                        onClick={() => {
-                            setStarted(true);
-                            setAttempts(attempts - 1);
-                        }}
-                    >
-                        Start Quiz
-                    </Button>
-                )}
-                {started && (
-                    <Button
-                        onClick={() => {
-                            setStarted(false);
-                        }}
-                    >
-                        Stop Quiz
-                    </Button>
-                )}
-                {!started && (
-                    <Button
-                        onClick={() => {
-                            setAttempts(attempts + 1);
-                        }}
-                    >
-                        Mulligan
-                    </Button>
-                )}
-            </div>
-        )
+        <div>
+            The number of attempts left is {attempts}
+            <Button
+                onClick={() => {
+                    setStarted(true);
+                    setAttempts(attempts - 1);
+                }}
+                disabled={started || attempts === 0}
+            >
+                Start Quiz
+            </Button>
+            <Button
+                onClick={() => {
+                    setStarted(false);
+                }}
+                disabled={!started}
+            >
+                Stop Quiz
+            </Button>
+            <Button
+                onClick={() => {
+                    setAttempts(attempts + 1);
+                }}
+                disabled={started}
+            >
+                Mulligan
+            </Button>
+        </div>
     );
 }

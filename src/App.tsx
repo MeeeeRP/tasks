@@ -5,7 +5,7 @@ import { ChangeType } from "./components/ChangeType";
 import { RevealAnswer } from "./components/RevealAnswer";
 import { StartAttempt } from "./components/StartAttempt";
 import { TwoDice } from "./components/TwoDice";
-// import { CycleHoliday } from "./components/CycleHoliday";
+import { CycleHoliday } from "./components/CycleHoliday";
 import { Counter } from "./components/Counter";
 
 function App(): React.JSX.Element {
@@ -31,7 +31,7 @@ function App(): React.JSX.Element {
             <hr />
             <ChangeType></ChangeType>
             <hr />
-            {/* <CycleHoliday></CycleHoliday> */}
+            <CycleHoliday></CycleHoliday>
         </div>
     );
 }

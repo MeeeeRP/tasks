@@ -4,6 +4,7 @@ import { Form } from "react-bootstrap";
 export function ChangeColor(): React.JSX.Element {
     const COLOR_LIST: string[] = [
         "honeydew",
+        "mintcream",
         "seashell",
         "lavenderblush",
         "cornsilk",
@@ -15,6 +16,7 @@ export function ChangeColor(): React.JSX.Element {
     //Commented out because the tests hate me and my attempt to make my app look good :(
     // const COLOR_DISPLAY: Record<string, string> = {
     //     honeydew: "Honeydew",
+    //     mintcream: "Mint Cream",
     //     seashell: "Seashell",
     //     lavenderblush: "Lavender Blush",
     //     cornsilk: "Corn Silk",

@@ -18,6 +18,7 @@ export function CheckAnswer({
 
     return (
         <div>
+            <h3>Check Answer</h3>
             <Form.Group controlId="checkAnswer">
                 <Form.Label>Check Answer</Form.Label>
                 <p>What is the answer to life, the universe, and everything?</p>

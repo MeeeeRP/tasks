@@ -21,6 +21,7 @@ export function GiveAttempts(): React.JSX.Element {
 
     return (
         <div>
+            <h3>Give Attempts</h3>
             <p>You have {attempts} remaining</p>
             <Form.Group controlId="giveAttempts">
                 <Form.Label>Request Attempts</Form.Label>

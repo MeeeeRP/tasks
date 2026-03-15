@@ -7,6 +7,7 @@ export function EditMode(): React.JSX.Element {
     const [name, setName] = useState<string>("Your Name");
     return (
         <div>
+            <h3>Edit Mode</h3>
             <Form.Group controlId="editMode">
                 <Form.Label>Edit Mode</Form.Label>
                 <Form.Check

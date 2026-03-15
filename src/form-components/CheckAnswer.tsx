@@ -2,10 +2,8 @@ import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 
 export function CheckAnswer({
-    question,
     expectedAnswer,
 }: {
-    question: string;
     expectedAnswer: string;
 }): React.JSX.Element {
     const [answer, setAnswer] = useState<string>("");
@@ -22,7 +20,7 @@ export function CheckAnswer({
         <div>
             <Form.Group controlId="checkAnswer">
                 <Form.Label>Check Answer</Form.Label>
-                <p>{question}</p>
+                <p>What is the answer to life, the universe, and everything?</p>
                 <Form.Control value={answer} onChange={updateAnswer} />
             </Form.Group>
             <h3>{answerDisplay()}</h3>

@@ -29,10 +29,7 @@ function App(): React.JSX.Element {
                 This says Hello World!
             </header>
             <hr></hr>
-            <CheckAnswer
-                question="What is the answer to life, the universe, and everything?"
-                expectedAnswer="42"
-            ></CheckAnswer>
+            <CheckAnswer expectedAnswer="42"></CheckAnswer>
             <hr></hr>
             {/* <GiveAttempts></GiveAttempts>
             <hr></hr>

@@ -5,17 +5,32 @@ import userEvent from "@testing-library/user-event";
 
 describe("CheckAnswer Component tests", () => {
     test("(2 pts) There is an input box", () => {
-        render(<CheckAnswer expectedAnswer="42" />);
+        render(
+            <CheckAnswer
+                question="What is the answer to life, the universe, and everything?"
+                expectedAnswer="42"
+            />,
+        );
         const inputBox = screen.getByRole("textbox");
         expect(inputBox).toBeInTheDocument();
     });
     test("(2 pts) The answer is originally incorrect.", () => {
-        render(<CheckAnswer expectedAnswer="42" />);
+        render(
+            <CheckAnswer
+                question="What is the answer to life, the universe, and everything?"
+                expectedAnswer="42"
+            />,
+        );
         expect(screen.getByText(/❌/i)).toBeInTheDocument();
         expect(screen.queryByText(/✔️/i)).not.toBeInTheDocument();
     });
     test("(2 pts) Entering the right answer makes it correct.", async () => {
-        render(<CheckAnswer expectedAnswer="42" />);
+        render(
+            <CheckAnswer
+                question="What is the answer to life, the universe, and everything?"
+                expectedAnswer="42"
+            />,
+        );
         const inputBox = screen.getByRole("textbox");
         await act(async () => {
             userEvent.type(inputBox, "42");
@@ -24,7 +39,12 @@ describe("CheckAnswer Component tests", () => {
         expect(screen.queryByText(/❌/i)).not.toBeInTheDocument();
     });
     test("(2 pts) Entering the wrong answer makes it incorrect.", async () => {
-        render(<CheckAnswer expectedAnswer="42" />);
+        render(
+            <CheckAnswer
+                question="What is the answer to life, the universe, and everything?"
+                expectedAnswer="42"
+            />,
+        );
         const inputBox = screen.getByRole("textbox");
         await act(async () => {
             userEvent.type(inputBox, "43");
@@ -33,7 +53,12 @@ describe("CheckAnswer Component tests", () => {
         expect(screen.queryByText(/✔️/i)).not.toBeInTheDocument();
     });
     test("(2 pts) Entering a different right answer makes it correct.", async () => {
-        render(<CheckAnswer expectedAnswer="Hello" />);
+        render(
+            <CheckAnswer
+                question="What is the answer to life, the universe, and everything?"
+                expectedAnswer="Hello"
+            />,
+        );
         const inputBox = screen.getByRole("textbox");
         await act(async () => {
             userEvent.type(inputBox, "Hello");
@@ -42,7 +67,12 @@ describe("CheckAnswer Component tests", () => {
         expect(screen.queryByText(/❌/i)).not.toBeInTheDocument();
     });
     test("(2 pts) Entering a different wrong answer still makes it incorrect.", async () => {
-        render(<CheckAnswer expectedAnswer="Hello" />);
+        render(
+            <CheckAnswer
+                question="What is the answer to life, the universe, and everything?"
+                expectedAnswer="Hello"
+            />,
+        );
         const inputBox = screen.getByRole("textbox");
         await act(async () => {
             userEvent.type(inputBox, "42");

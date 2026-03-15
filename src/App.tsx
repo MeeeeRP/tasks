@@ -12,11 +12,10 @@ import { ColoredBox } from "./bad-components/ColoredBox";
 import { ShoveBox } from "./bad-components/ShoveBox";
 import { ChooseTeam } from "./bad-components/ChooseTeam";
 import { CheckAnswer } from "./form-components/CheckAnswer";
-import { GiveAttempts } from "./form-components/GiveAttempts";
-import { EditMode } from "./form-components/EditMode";
-import { MultipleChoiceQuestion } from "./form-components/MultipleChoiceQuestion";
-import { ChangeColor } from "./form-components/ChangeColor";
-
+// import { GiveAttempts } from "./form-components/GiveAttempts";
+// import { EditMode } from "./form-components/EditMode";
+// import { MultipleChoiceQuestion } from "./form-components/MultipleChoiceQuestion";
+// import { ChangeColor } from "./form-components/ChangeColor";
 function App(): React.JSX.Element {
     return (
         <div className="App">
@@ -30,9 +29,12 @@ function App(): React.JSX.Element {
                 This says Hello World!
             </header>
             <hr></hr>
-            <CheckAnswer expectedAnswer="42"></CheckAnswer>
+            <CheckAnswer
+                question="What is the answer to life, the universe, and everything?"
+                expectedAnswer="42"
+            ></CheckAnswer>
             <hr></hr>
-            <GiveAttempts></GiveAttempts>
+            {/* <GiveAttempts></GiveAttempts>
             <hr></hr>
             <EditMode></EditMode>
             <hr></hr>
@@ -42,8 +44,8 @@ function App(): React.JSX.Element {
                 options={["a", "b", "c"]}
                 expectedAnswer="b"
             ></MultipleChoiceQuestion>
-            <hr></hr>
-            {/* <DoubleHalf></DoubleHalf> */}
+            <hr></hr> */}
+            <DoubleHalf></DoubleHalf>
             <hr></hr>
             <ChooseTeam></ChooseTeam>
             <hr></hr>

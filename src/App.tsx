@@ -13,7 +13,7 @@ import { ShoveBox } from "./bad-components/ShoveBox";
 import { ChooseTeam } from "./bad-components/ChooseTeam";
 import { CheckAnswer } from "./form-components/CheckAnswer";
 import { GiveAttempts } from "./form-components/GiveAttempts";
-// import { EditMode } from "./form-components/EditMode";
+import { EditMode } from "./form-components/EditMode";
 // import { MultipleChoiceQuestion } from "./form-components/MultipleChoiceQuestion";
 // import { ChangeColor } from "./form-components/ChangeColor";
 function App(): React.JSX.Element {
@@ -33,7 +33,7 @@ function App(): React.JSX.Element {
             <hr></hr>
             <GiveAttempts></GiveAttempts>
             <hr></hr>
-            {/* <EditMode></EditMode> */}
+            <EditMode></EditMode>
             <hr></hr>
             {/* <ChangeColor></ChangeColor> */}
             <hr></hr>
